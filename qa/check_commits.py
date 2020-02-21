@@ -31,6 +31,7 @@ repo = Repo(path)
 
 _logger.info("=================================")
 _logger.info("INTERVALO DE {} HASTA {}".format(form_fecha_inicio, form_fecha_fin))
+_logger.info("BRANCH: {} ".format(repo.active_branch.name))
 _logger.info("====")
 
 
