@@ -44,6 +44,8 @@ steps:
       from_secret: AWS_SECRET_ACCESS_KEY
     repo: REGISTRY_URI/jjvargass
     registry: REGISTRY_URI
+  environment:
+    HOME: "/tmp"
   when:
     branch:
     - develop
