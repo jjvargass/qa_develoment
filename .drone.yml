@@ -42,10 +42,11 @@ steps:
       from_secret: AWS_ACCESS_KEY_ID
     secret_key:
       from_secret: AWS_SECRET_ACCESS_KEY
-    repo: REGISTRY_URI/jjvargass
+    repo: URI
     registry: REGISTRY_URI
-  environment:
-    HOME: "/tmp"
+    region: us-east-1
+    tags:
+      - latest
   when:
     branch:
     - develop
