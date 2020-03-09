@@ -37,15 +37,14 @@ steps:
 
 - name: publish_to_ecr
   image: plugins/ecr
-  debug: true
   settings:
     access_key:
-      from_secret: AWS_ACCESS_KEY_ID
+      from_secret: aws_access_key_id
     secret_key:
-      from_secret: AWS_SECRET_ACCESS_KEY
-    repo: URI
-    registry: REGISTRY_URI
-    region: us-east-1
+      from_secret: aws_secret_acess_key
+    region:
+      from_secret: aws_region
+    repo: jjvargass
     tags:
       - latest
   when:
