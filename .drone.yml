@@ -52,8 +52,6 @@ steps:
     event:
     - push
 
-
-
 # - name: run_sonar_scanner
 #   image: timbru31/java-node
 #   commands:
