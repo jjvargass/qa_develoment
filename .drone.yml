@@ -37,6 +37,7 @@ steps:
 
 - name: publish_to_ecr
   image: plugins/ecr
+  debug: true
   settings:
     access_key:
       from_secret: AWS_ACCESS_KEY_ID
