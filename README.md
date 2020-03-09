@@ -9,6 +9,14 @@ Este repositorio tiene como propósito almacenar una serie de script que validen
 * [python 2.7](https://www.python.org/download/releases/2.7/)
 * [GitPython](https://gitpython.readthedocs.io/en/stable/)
 
+### Variables de Entorno
+```shell
+# En Pipeline
+AWS_ACCESS_KEY_ID: llave de acceso ID Usuario AWS
+AWS_SECRET_ACCESS_KEY: Secreto de Usuario AWS
+REGISTRY_ACCOUNT_ID: Id repositorio Registry
+```
+
 ### Instalación
 ```shell
 # Opción 1
@@ -93,9 +101,9 @@ steps:
 
 ## Licencia
 
-This file is part of nombrerepo_crud.
+This file is part of qa_develoment.
 
-nombrerepo_crud is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+qa_develoment is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
 Foobar is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
