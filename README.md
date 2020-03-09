@@ -14,7 +14,7 @@ Este repositorio tiene como propósito almacenar una serie de script que validen
 # En Pipeline
 AWS_ACCESS_KEY_ID: llave de acceso ID Usuario AWS
 AWS_SECRET_ACCESS_KEY: Secreto de Usuario AWS
-REGISTRY_ACCOUNT_ID: Id repositorio Registry
+REGISTRY_URI: URI repositorio Registry con account ID
 ```
 
 ### Instalación

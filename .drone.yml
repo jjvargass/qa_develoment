@@ -43,7 +43,7 @@ steps:
     secret_key:
       from_secret: AWS_SECRET_ACCESS_KEY
     repo: jjvargass
-    registry: REGISTRY_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com
+    registry: REGISTRY_URI
   when:
     branch:
     - develop
