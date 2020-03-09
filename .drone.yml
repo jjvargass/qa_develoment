@@ -39,11 +39,11 @@ steps:
   image: plugins/ecr
   settings:
     access_key:
-      from_secret: aws_access_key_id
+      from_secret: AWS_ACCESS_KEY_ID
     secret_key:
-      from_secret: aws_secret_acess_key
+      from_secret: AWS_SECRET_ACESS_KEY
     region:
-      from_secret: aws_region
+      from_secret: AWS_REGION
     repo: jjvargass
     tags:
       - latest
