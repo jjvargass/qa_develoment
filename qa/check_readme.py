@@ -15,16 +15,18 @@ def check_readme():
                 'Ejecución del Proyecto',
             'Licencia'
             ]
-
     control = 0.0
     words_encontradas = []
     total_encontradas = 0.0
     control = len(words)/2.0
 
+    _logger.info("=================================")
+    _logger.info("        VALIDAR README           ")
+    _logger.info("=================================")
+
     try:
         with open('README.md') as f:
             all_line = f.readlines()
-            _logger.info("=================================")
             _logger.info("DEFINICIONES ENCONTRADAS:")
             _logger.info("====")
         for line in all_line:
@@ -66,10 +68,12 @@ def check_readme():
 
         # Resultado del Check
         _logger.info("=================================")
-        _logger.info("RESULTADO CHECK BRANCH:")
+        _logger.info("RESULTADO VALIDAR README:")
         _logger.info("====")
         if (total_encontradas > control):
             _logger.info("Cumple con los lineamientos")
+            _logger.info("=================================")
+
         else:
             _logger.error("No Cumple con los Lineamientos")
             raise Exception('No Cumple con los Lineamientos')
