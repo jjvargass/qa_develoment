@@ -17,8 +17,9 @@ repo = Repo(path)
 all_branches = []
 for ref in repo.git.branch('-r').split('\n'):
     name = ref.split('/')[1]
-    if ('HEAD' in name) or ('dev' in name) or ('tes' in name) or ('maste' in name): 
+    if ('HEAD' in name) or ('develop' in name) or ('release' in name) or ('maste' in name):
         pass
+        _logger.info(name)
     else:
         all_branches.append(name)
 
@@ -28,8 +29,8 @@ _logger.info("====")
 if len(all_branches) >= max_branche:
     for i in all_branches:
         _logger.info(i)
-    _logger.error('A superado el numero maximo de branch')
-    raise Exception('A superado el numero maximo de branch')
+    _logger.error('Ha superado el numero maximo de branch')
+    raise Exception('Ha superado el numero maximo de branch')
 else:
-    _logger.info('A cumplido con el lineamiento de limpieza de brachs\n')
+    _logger.info('Ha cumplido con el lineamiento de limpieza de brachs\n')
 
