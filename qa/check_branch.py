@@ -33,7 +33,7 @@ for ref in repo.git.branch('-r').split('\n'):
         _logger.info(ref.lstrip())
         all_branches.append(name)
 _logger.info("=================================")
-_logger.info(" RESULTADO CHECK BRANCH:")
+_logger.info(" RESULTADO VALIDAR BRANCH:")
 _logger.info("====")
 if len(all_branches) >= max_branche:
     for i in all_branches:
