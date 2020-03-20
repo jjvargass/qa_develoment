@@ -23,7 +23,7 @@ _logger.info("====")
 for branch in repo.git.branch('-r').split('\n'):
     _logger.info(branch.lstrip())
 _logger.info("=================================")
-_logger.info("BRANCH LEFTOVER")
+_logger.info("BRANCH INNECESARIO")
 _logger.info("====")
 for ref in repo.git.branch('-r').split('\n'):
     name = ref.split('/')[1]   # output is origin/develop for this reason it is [1]
@@ -35,6 +35,8 @@ for ref in repo.git.branch('-r').split('\n'):
 _logger.info("=================================")
 _logger.info(" RESULTADO VALIDAR BRANCH:")
 _logger.info("====")
+_logger.info('Branches innecesarios: ' + str(len(all_branches)))
+_logger.info('Limite branches innecesarios: ' + str(max_branche))
 if len(all_branches) >= max_branche:
     for i in all_branches:
         _logger.info(i)
