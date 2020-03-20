@@ -54,6 +54,8 @@ for i in commits_list:
     comentrario = i.split(':')
     if (len(comentrario) > 1) and ( ('feat' in comentrario[0]) or ('fix' in comentrario[0]) or ('docs' in comentrario[0]) or ('test' in comentrario[0]) or ('refactor' in comentrario[0]) ):
         pass
+    elif (len(comentrario) == 1 and 'Merge' in comentrario[0]):
+        pass
     else:
         _logger.info(i)
         commits_sin_lineamiento.append(comentrario[0])
@@ -61,10 +63,12 @@ for i in commits_list:
 _logger.info("=================================")
 _logger.info(" RESULTADO VALIDAR COMMITS:")
 _logger.info("====")
+_logger.info('Commits sin lineamiento: ' + str(len(commits_sin_lineamiento)))
+_logger.info('Limite de Commits sin lineamiento: ' + str(max_commits_no_lineamiento))
 if len(commits_sin_lineamiento) >= max_commits_no_lineamiento:
     _logger.error("Ha Supperado el Limite de Commits Sin lineamiento")
     _logger.error("De {} Commits, {} No Cumplen con Lineamientos".format(total_commits, len(commits_sin_lineamiento) ))
     raise Exception('Ha Supperado el Limite de Commits Sin lineamiento')
 else:
-    _logger.info('A Cumplido con el Lineamiento de Definición de Commits')
+    _logger.info('Ha Cumplido con el Lineamiento de Definición de Commits')
     _logger.info("=================================")
