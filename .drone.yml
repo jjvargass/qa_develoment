@@ -35,26 +35,23 @@ steps:
     event:
     - push
 
-- name: publish_to_ecr
-  image: plugins/ecr
+- name: publish_dockerhub
+  image: plugins/docker
   settings:
-    access_key:
-      from_secret: AWS_ACCESS_KEY_ID
-    secret_key:
-      from_secret: AWS_SECRET_ACESS_KEY
-    region:
-      from_secret: AWS_REGION
-    repo: jjvargass
+    username:
+      from_secret: DOCKER_USERNAME
+    password:
+      from_secret: DOCKER_PASSWORD
+    repo: ${DRONE_REPO}
     tags:
+      - ${DRONE_COMMIT:0:7}
       - latest
   when:
     branch:
     - develop
-    - release/*
     - master
     event:
     - push
-
 
 - name: notify_telegram
   image: appleboy/drone-telegram
