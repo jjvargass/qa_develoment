@@ -10,5 +10,5 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 COPY ./qa /app
 
-# Install any needed packages specified in requirements.txt
+# Install needed packages specified
 RUN pip install gitpython

@@ -41,9 +41,12 @@ steps:
     access_key:
       from_secret: AWS_ACCESS_KEY_ID
     secret_key:
-      from_secret: AWS_SECRET_ACCESS_KEY
+      from_secret: AWS_SECRET_ACESS_KEY
+    region:
+      from_secret: AWS_REGION
     repo: jjvargass
-    registry: REGISTRY_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com
+    tags:
+      - latest
   when:
     branch:
     - develop
@@ -51,8 +54,6 @@ steps:
     - master
     event:
     - push
-
-
 
 # - name: run_sonar_scanner
 #   image: timbru31/java-node
