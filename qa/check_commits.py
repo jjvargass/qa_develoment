@@ -30,13 +30,18 @@ path = os.getcwd()
 repo = Repo(path)
 
 _logger.info("=================================")
+_logger.info("        VALIDAR COMMITS          ")
+_logger.info("=================================")
 _logger.info("INTERVALO DE {} HASTA {}".format(form_fecha_inicio, form_fecha_fin))
-_logger.info("BRANCH: {} ".format(repo.active_branch.name))
-_logger.info("====")
+_logger.info("BRANCH DE VALIDACIÓN: {} ".format(repo.active_branch.name))
 
 
 commits_list = repo.git.log('--oneline', after, before, '--format=%B').split('\n')
 #commits_list = repo.git.log('--oneline', '--after=2020-02-17 00:00', '--before=2020-02-17 23:59', '--format=%B').split('\n')
+
+_logger.info("=================================")
+_logger.info("COMMITS SIN LINEAMIENTO")
+_logger.info("====")
 
 # limpiar lista
 while("" in commits_list):
@@ -50,11 +55,16 @@ for i in commits_list:
     if (len(comentrario) > 1) and ( ('feat' in comentrario[0]) or ('fix' in comentrario[0]) or ('docs' in comentrario[0]) or ('test' in comentrario[0]) or ('refactor' in comentrario[0]) ):
         pass
     else:
+        _logger.info(i)
         commits_sin_lineamiento.append(comentrario[0])
 
+_logger.info("=================================")
+_logger.info(" RESULTADO VALIDAR COMMITS:")
+_logger.info("====")
 if len(commits_sin_lineamiento) >= max_commits_no_lineamiento:
     _logger.error("Ha Supperado el Limite de Commits Sin lineamiento")
     _logger.error("De {} Commits, {} No Cumplen con Lineamientos".format(total_commits, len(commits_sin_lineamiento) ))
     raise Exception('Ha Supperado el Limite de Commits Sin lineamiento')
 else:
-    _logger.info('A Cumplido con el Lineamiento de Definición de Commits\n')
+    _logger.info('A Cumplido con el Lineamiento de Definición de Commits')
+    _logger.info("=================================")
