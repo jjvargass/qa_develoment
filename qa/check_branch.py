@@ -30,6 +30,8 @@ def check_branch():
     _logger.info("=================================")
     _logger.info("TODOS LOS BRANCH")
     _logger.info("====")
+    _logger.info(options.git_url)
+    _logger.info("====")
 
     cmd = 'git ls-remote -h ' + str(options.git_url)
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
