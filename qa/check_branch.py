@@ -28,13 +28,16 @@ def check_branch():
     _logger.info("=================================")
     _logger.info("         VALIDAR BRANCH          ")
     _logger.info("=================================")
-    _logger.info("REPO: " + str(options.git_url))
+    _logger.info("REPO")
+    _logger.info("====")
+    _logger.info(str(options.git_url))
+    _logger.info("=================================")
     _logger.info("TODOS LOS BRANCH")
     _logger.info("====")
+
     cmd = 'git ls-remote -h ' + str(options.git_url)
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()
-
     output_branches = [ x.split('\t')[-1] for x in output.split('\n') ]
 
     # get name repo
