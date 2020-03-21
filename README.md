@@ -44,7 +44,7 @@ steps:
   image: python:2.7
   commands:
   - pip install gitpython
-  - python qa/check_branch.py
+  - python qa/check_branch.py -H ${DRONE_GIT_HTTP_URL}
   when:
     branch:
     - dev
@@ -82,7 +82,7 @@ steps:
 - name: check_branch
   image: jjvargass/qa_develoment:0.1
   commands:
-  - python /app/check_branch.py
+  - python /app/check_branch.py -H ${DRONE_GIT_HTTP_URL}
   when:
     branch:
     - dev
