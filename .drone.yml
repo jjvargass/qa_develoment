@@ -3,9 +3,9 @@ name: jjvargass_qa_ci
 
 steps:
 - name: check_readme
-  image: jjvargass/qa_develoment:latest
+  image: python:2.7
   commands:
-  - python /app/check_readme.py
+  - python qa/check_readme.py
   when:
     branch:
     - develop
@@ -14,9 +14,10 @@ steps:
     - push
 
 - name: check_branch
-  image: jjvargass/qa_develoment:latest
+  image: python:2.7
   commands:
-  - python /app/check_branch.py
+  - pip install gitpython
+  - python qa/check_branch.py
   when:
     branch:
     - develop
@@ -25,9 +26,10 @@ steps:
     - push
 
 - name: check_commits
-  image: jjvargass/qa_develoment:latest
+  image: python:2.7
   commands:
-  - python /app/check_commits.py
+  - pip install gitpython
+  - python qa/check_commits.py
   when:
     branch:
     - develop
