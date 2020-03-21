@@ -28,7 +28,7 @@ def check_branch():
     _logger.info("=================================")
     _logger.info("         VALIDAR BRANCH          ")
     _logger.info("=================================")
-    _logger.info("REPO:" + str(options.git_url))
+    _logger.info("REPO: " + str(options.git_url))
     _logger.info("TODOS LOS BRANCH")
     _logger.info("====")
     cmd = 'git ls-remote -h ' + str(options.git_url)
