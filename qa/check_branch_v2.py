@@ -21,8 +21,8 @@ _logger.info("=================================")
 _logger.info("TODOS LOS BRANCH")
 _logger.info("====")
 
-
-data = Git().execute('git ls-remote -h https://github.com/jjvargass/qa_develoment')
+g = Git()
+data = g.execute('git ls-remote -h https://github.com/jjvargass/qa_develoment')
 branches = [ x.split('/')[-1] for x in data.split('\n') ]
 print branches
 
