@@ -11,10 +11,11 @@ Este repositorio tiene como propósito almacenar una serie de script que validen
 
 ### Variables de Entorno
 ```shell
-# En Pipeline
-AWS_ACCESS_KEY_ID: llave de acceso ID Usuario AWS
-AWS_SECRET_ACCESS_KEY: Secreto de Usuario AWS
-REGISTRY_URI: URI repositorio Registry con account ID
+# Integración Continua
+DOCKER_USERNAME: Usuario Docker Hup
+DOCKER_PASSWORD: Password Docker Hup
+TELEGRAM_TOKEN: Token del Bot de Telegran
+TELEGRAM_TO: Grupo o conversación Id donde el Bot Reportará
 ```
 
 ### Instalación
