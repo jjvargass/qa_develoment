@@ -2,7 +2,7 @@
 # -*- coding: utf8 -*-
 
 import os
-from git import Repo
+from git import Repo, Git
 import logging
 
 
