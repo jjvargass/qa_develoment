@@ -17,11 +17,12 @@ steps:
   image: python:2.7
   commands:
   - pip install gitpython
-  - python qa/check_branch.py
+  - python qa/check_branch.py -H ${DRONE_GIT_HTTP_URL}
   when:
     branch:
     - develop
     - release/*
+    - feature/*
     event:
     - push
 
@@ -50,7 +51,6 @@ steps:
       - latest
   when:
     branch:
-    - develop
     - master
     event:
     - push
