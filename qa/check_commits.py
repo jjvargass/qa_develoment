@@ -54,7 +54,7 @@ for i in commits_list:
     comentrario = i.split(':')
     if (len(comentrario) > 1) and ( ('feat' in comentrario[0]) or ('fix' in comentrario[0]) or ('docs' in comentrario[0]) or ('test' in comentrario[0]) or ('refactor' in comentrario[0]) ):
         pass
-    elif (len(comentrario) == 1 and 'Merge' in comentrario[0]):
+    elif (len(comentrario) >= 1) and ( ('Merge branch' in comentrario[0]) or ('See merge request' in comentrario[0]) ):
         pass
     else:
         _logger.info(i)
