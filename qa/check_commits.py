@@ -66,8 +66,9 @@ _logger.info("====")
 _logger.info('Commits sin lineamiento: ' + str(len(commits_sin_lineamiento)))
 _logger.info('Limite de commits sin lineamiento: ' + str(max_commits_no_lineamiento))
 if len(commits_sin_lineamiento) >= max_commits_no_lineamiento:
-    _logger.error("Ha Supperado el Limite de Commits Sin lineamiento")
-    _logger.error("De {} Commits, {} No Cumplen con Lineamientos".format(total_commits, len(commits_sin_lineamiento) ))
+    _logger.info("Ha Supperado el Limite de Commits Sin lineamiento")
+    _logger.info("De {} Commits, {} No Cumplen con Lineamientos".format(total_commits, len(commits_sin_lineamiento) ))
+    _logger.info("=================================")
     raise Exception('Ha Supperado el Limite de Commits Sin lineamiento')
 else:
     _logger.info('Ha Cumplido con el Lineamiento de Definición de Commits')
