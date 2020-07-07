@@ -52,7 +52,7 @@ commits_sin_lineamiento = []
 
 for i in commits_list:
     comentrario = i.split(':')
-    if (len(comentrario) > 1) and ( ('feat' in comentrario[0]) or ('fix' in comentrario[0]) or ('docs' in comentrario[0]) or ('test' in comentrario[0]) or ('refactor' in comentrario[0]) ):
+    if (len(comentrario) > 1) and ( ('feat' in comentrario[0]) or ('fix' in comentrario[0]) or ('docs' in comentrario[0]) or ('test' in comentrario[0]) or ('refactor' in comentrario[0]) or ('devops' in comentrario[0]) or ('management' in comentrario[0]) ):
         pass
     elif ( ('Merge' in comentrario[0]) or ('See' in comentrario[0]) ):
         pass
@@ -66,8 +66,9 @@ _logger.info("====")
 _logger.info('Commits sin lineamiento: ' + str(len(commits_sin_lineamiento)))
 _logger.info('Limite de commits sin lineamiento: ' + str(max_commits_no_lineamiento))
 if len(commits_sin_lineamiento) >= max_commits_no_lineamiento:
-    _logger.error("Ha Supperado el Limite de Commits Sin lineamiento")
-    _logger.error("De {} Commits, {} No Cumplen con Lineamientos".format(total_commits, len(commits_sin_lineamiento) ))
+    _logger.info("Ha Supperado el Limite de Commits Sin lineamiento")
+    _logger.info("De {} Commits, {} No Cumplen con Lineamientos".format(total_commits, len(commits_sin_lineamiento) ))
+    _logger.info("=================================")
     raise Exception('Ha Supperado el Limite de Commits Sin lineamiento')
 else:
     _logger.info('Ha Cumplido con el Lineamiento de Definición de Commits')
