@@ -1,6 +1,44 @@
 # qa_develoment
 
-Este repositorio tiene como propósito almacenar una serie de script que validen buenas prácticas en el Sistema Control de Versionamiento Git para ser implementado en un pipeline.
+Este repositorio tiene como propósito consolidar una serie de script que validen buenas prácticas en el Sistema Control de Versionamiento Git para ser implementado en un pipeline y reducir la deuda técnica.
+
+## Script check_readme.py
+Este script valida que el archivo README  contenga los siguientes capítulos:
+- Especificaciones Técnicas
+- Tecnologías Implementadas y Versiones
+- Variables de Entorno
+- Ejecución del Proyecto
+- Estado CI
+- Licencia
+
+## Script check_commits.py
+Este script valida que los commits deban contener un tag previos para proporcionar información valiosa y mantenibilidad al código.
+
+**feat**: Describe si trabajaste en un nuevo feature.
+
+**fix**: Describe si solucionaste un bug.
+
+**docs**: Dice si hiciste algún cambio en la documentación.
+
+**test**: Indica si añadiste un test
+
+**refactor**: Nos muestra que se ejecutó algún refactor en el código.
+
+**devops**: En este se engloban las tareas de DevOps ya sea, Monitoreo, Automatización, etc.
+
+**management**: En esta categoría se agrupan todas las tareas de merge de los commits en las ramas, creación de ramas hotfix, release, etc. Este tag es para el uso exclusivo de las personas que tienen el rol de Master/Maintainer del proyecto.
+
+Como Comentar los commits:
+```bash
+git commit -m "devops: ajustes formato ...."
+git commit -m "fix: se realiza ....."
+```
+De esta forma se aporta una mejor organización a todo el control de cambios e intuitivo.
+
+## Script check_branch.py
+
+Este script valida la limpieza y el nombramiento de branch que nos aconseja la metodologia [gitflow](https://danielkummer.github.io/git-flow-cheatsheet/)
+
 
 ## Especificaciones Técnicas
 
