@@ -62,7 +62,8 @@ def check_branch():
     _logger.info('Branches innecesarios: ' + str(len(branches_innecesarios)))
     _logger.info('Limite branches innecesarios: ' + str(max_branche))
     if len(branches_innecesarios) >= max_branche:
-        _logger.error('Ha superado el numero maximo de branch')
+        _logger.info('Ha superado el numero maximo de branch')
+        _logger.info("=================================")
         raise Exception('Ha superado el numero maximo de branch')
     else:
         _logger.info('Ha cumplido con el lineamiento de limpieza de brachs')
