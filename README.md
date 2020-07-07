@@ -2,7 +2,7 @@
 
 Este repositorio tiene como propósito consolidar una serie de script que validen buenas prácticas en el Sistema Control de Versionamiento Git para ser implementado en un pipeline y reducir la deuda técnica.
 
-#### Script check_readme.py
+### Script check_readme.py
 Este script valida que el archivo README  contenga los siguientes capítulos:
 - Especificaciones Técnicas
 - Tecnologías Implementadas y Versiones
@@ -11,7 +11,7 @@ Este script valida que el archivo README  contenga los siguientes capítulos:
 - Estado CI
 - Licencia
 
-#### Script check_commits.py
+### Script check_commits.py
 Este script valida que los commits deban contener un tag previos para proporcionar información valiosa y mantenibilidad al código.
 
 **feat**: Describe si trabajaste en un nuevo feature.
@@ -35,7 +35,7 @@ git commit -m "fix: se realiza ....."
 ```
 De esta forma se aporta una mejor organización a todo el control de cambios e intuitivo.
 
-#### Script check_branch.py
+### Script check_branch.py
 
 Este script valida la limpieza y el nombramiento de branch que nos aconseja la metodologia [gitflow](https://danielkummer.github.io/git-flow-cheatsheet/)
 
