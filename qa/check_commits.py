@@ -52,7 +52,7 @@ commits_sin_lineamiento = []
 
 for i in commits_list:
     comentrario = i.split(':')
-    if (len(comentrario) > 1) and ( ('feat' in comentrario[0]) or ('fix' in comentrario[0]) or ('docs' in comentrario[0]) or ('test' in comentrario[0]) or ('refactor' in comentrario[0]) ):
+    if (len(comentrario) > 1) and ( ('feat' in comentrario[0]) or ('fix' in comentrario[0]) or ('docs' in comentrario[0]) or ('test' in comentrario[0]) or ('refactor' in comentrario[0]) or ('devops' in comentrario[0]) or ('management' in comentrario[0]) ):
         pass
     elif ( ('Merge' in comentrario[0]) or ('See' in comentrario[0]) ):
         pass
