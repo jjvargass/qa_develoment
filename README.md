@@ -52,8 +52,14 @@ TELEGRAM_TO: Grupo o conversación Id donde el Bot Reportará
 
 ### Instalación
 ```shell
-# Opción 1
 git clone https://github.com/jjvargass/qa_develoment.git
+cd qa_develoment
+
+# Opción 1
+pip install -r requirements.txt
+
+# Opción 2
+sudo pip install gitpython
 ```
 
 ### Pipeline Drone CI desde archivos fuentes dentro de un en Repositorio
